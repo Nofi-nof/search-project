@@ -34,16 +34,54 @@
 			sAtk: 50,
 			sDef: 64,
 			spd: 43
+		},
+		{
+			name: 'フワリ',
+			type: 'くさ',
+			hp: 44,
+			atk: 48,
+			def: 65,
+			sAtk: 50,
+			sDef: 64,
+			spd: 43
+		},
+		{
+			name: 'ヒノアラシ',
+			type: 'ほのお',
+			hp: 44,
+			atk: 48,
+			def: 65,
+			sAtk: 50,
+			sDef: 64,
+			spd: 43
+		},
+		{
+			name: 'シズクガメ',
+			type: 'みず',
+			hp: 44,
+			atk: 48,
+			def: 65,
+			sAtk: 50,
+			sDef: 64,
+			spd: 43
 		}
 	];
 
-	$: filterPokemons = () => pokemons.filter((pokemon) => pokemon.name === searchWord);
+	$: includesPokemons = () => pokemons.filter((pokemon) => pokemon.name.includes(searchWord));
 </script>
 
-<Input bind:searchWord />
+<div class="header">
+	<Input bind:searchWord />
+</div>
 
 <main>
-	{#each filterPokemons() as p}
+	{#each includesPokemons() as p}
 		<Pokemon pokemon={p} />
 	{/each}
 </main>
+
+<style>
+	.header {
+		padding: 10px 10px 10px 10px;
+	}
+</style>
