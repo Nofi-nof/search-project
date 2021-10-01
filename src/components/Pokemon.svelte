@@ -1,12 +1,11 @@
 <script>
-	import Bar from './Bar.svelte';
+	import Bar from '../components/Bar.svelte';
 
 	export let pokemon;
 
 	const typeToClass = {
-		くさ: 'glass',
-		ほのお: 'fire',
-		みず: 'water'
+		type_1: 'glass',
+		type_2: 'fire'
 	};
 
 	let open = false;
@@ -18,12 +17,10 @@
 	{#if open}
 		<div class="status">
 			<h3>ステータス</h3>
-			<Bar label="HP" value={pokemon.hp} />
-			<Bar label="攻撃" value={pokemon.atk} />
-			<Bar label="防御" value={pokemon.def} />
-			<Bar label="特攻" value={pokemon.sAtk} />
-			<Bar label="特防" value={pokemon.sDef} />
-			<Bar label="素早" value={pokemon.spd} />
+			<Bar label="重さ" value={pokemon.omosa} />
+			<Bar label="高さ" value={pokemon.takasa} />
+			<Bar label="タイプ１" value={pokemon.type_1} />
+			<Bar label="タイプ２" value={pokemon.type_2} />
 		</div>
 	{:else}
 		<div>クリックで詳細を見る</div>
@@ -48,9 +45,5 @@
 
 	.fire {
 		background-color: rgb(226, 82, 82);
-	}
-
-	.water {
-		background-color: rgb(62, 104, 240);
 	}
 </style>

@@ -1,6 +1,6 @@
 <script>
-	import Pokemon from './Pokemon.svelte';
-	import Input from './Input.svelte';
+	import Pokemon from '../components/Pokemon.svelte';
+	import Input from '../components/Input.svelte';
 
 	let searchWord = '';
 
@@ -71,6 +71,7 @@
 </script>
 
 <div class="header">
+	<img src="/src/images/logo.png" class="h-10 px-2" alt="pokemon-logo" />
 	<Input bind:searchWord />
 </div>
 
@@ -82,6 +83,8 @@
 
 <style>
 	.header {
+		align-items: center;
+		display: flex;
 		padding: 10px 10px 10px 10px;
 	}
 </style>
